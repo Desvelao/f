@@ -1,3 +1,3 @@
-# ftypes
+# f
 
 Functional helpers

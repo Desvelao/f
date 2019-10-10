@@ -1,9 +1,9 @@
-local fstring = require("ftypes.string")
+local fstring = require("f.string")
 describe("table functional", function()
     -- tests go here
     local str1 = "lua"
-    local str2 = "ftypes"
-    local str3 = "use ftypes for lua"
+    local str2 = "f"
+    local str3 = "use f for lua"
     local str4 = "  Hello Lua  "
     local str5 = "Hello Lua  "
     local str6 = "  Hello Lua"
@@ -21,11 +21,11 @@ describe("table functional", function()
 
     it("split", function()
         assert.are.same({"l","u","a"},fstring.split(str1, "."))
-        assert.are.same({"use","ftypes","for", "lua"}, fstring.split(str3, "%S+"))
+        assert.are.same({"use","f","for", "lua"}, fstring.split(str3, "%S+"))
     end)
 
     it("concat", function()
-        assert.are.equal("luaftypes",fstring.concat(str1, str2))
+        assert.are.equal("luaf",fstring.concat(str1, str2))
     end)
 
     it("match", function()

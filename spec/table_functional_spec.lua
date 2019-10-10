@@ -1,6 +1,5 @@
-local ftable = require("ftypes.table")
+local ftable = require("f.table")
 describe("table functional", function()
-    -- tests go here
     local array3 = {1,2,3}
     local array4 = {1,2,3,4}
     local array5 = {1,2,3,4,5}
@@ -11,8 +10,6 @@ describe("table functional", function()
         local target = {2,4,6}
         local t = ftable.map(array3, function(v) return v*2 end)
         assert.are.same({2,4,6}, t)
-        -- local map_oop = ftable(array):map(function(v) return v*2 end)
-        -- assert.are.same(map_oop, target)
     end)
     
     it("filter", function()
@@ -144,13 +141,4 @@ describe("table functional", function()
         assert.are.equal(3,t)
     end)
     
-
-    
-    -- describe("a nested block", function()
-    --   describe("can have many describes", function()
-    --     -- tests
-    --   end)
-    -- end)
-  
-    -- more tests pertaining to the top level
   end)

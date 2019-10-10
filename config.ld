@@ -1,9 +1,9 @@
-project = 'ftypes'
+project = 'f'
 description = ''
 full_description = [[
 ]]
-title = 'ftypes - functional utils'
-file = {'ftypes',exclude = {}}
+title = 'f - functional utils'
+file = {'f',exclude = {}}
 dir = 'docs'
 format = 'markdown'
 readme = "README.md"

@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>ftypes - functional utils</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ftypes</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><strong>fstring</strong></li>
+  <li><a href="../classes/ftable.html">ftable</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>fstring</code></h1>
+<p>fstring module</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#fstring:starts_with">fstring:starts_with (s, str)</a></td>
+	<td class="summary">Check if a string starts with other</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:ends_with">fstring:ends_with (s, str)</a></td>
+	<td class="summary">Check if a string ends with other</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:split">fstring:split (s, pattern)</a></td>
+	<td class="summary">Split a string by a given pattern</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:concat">fstring:concat (s, ...)</a></td>
+	<td class="summary">Concat a string with multilpe strings</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:match">fstring:match (s, pattern)</a></td>
+	<td class="summary">Match pattern in string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:rep">fstring:rep (s, count)</a></td>
+	<td class="summary">Repeat a string a number of times given</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:trim">fstring:trim (s)</a></td>
+	<td class="summary">Trim start and end a string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:trim_start">fstring:trim_start (s)</a></td>
+	<td class="summary">Trim start a string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:trim_end">fstring:trim_end (s)</a></td>
+	<td class="summary">Trim end a string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:pad_start">fstring:pad_start (s, target_length, pad_string)</a></td>
+	<td class="summary">Pad start a string with a pad_string given until length given</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:pad_end">fstring:pad_end (s, target_length, pad_string)</a></td>
+	<td class="summary">Pad end a string with a pad_string given until length given</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:includes">fstring:includes (s, search_string, position)</a></td>
+	<td class="summary">Check if an string is included in other</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:index_of">fstring:index_of (s, pattern, index, plain)</a></td>
+	<td class="summary">Returns index of first match of pattern</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fstring:replace">fstring:replace (s, pattern, replace_string, substitutions)</a></td>
+	<td class="summary">Replace a matched pattern in a string by other</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "fstring:starts_with"></a>
+    <strong>fstring:starts_with (s, str)</strong>
+    </dt>
+    <dd>
+    Check if a string starts with other
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         String that base starts with.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:ends_with"></a>
+    <strong>fstring:ends_with (s, str)</strong>
+    </dt>
+    <dd>
+    Check if a string ends with other
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">str</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         String that base ends with.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:split"></a>
+    <strong>fstring:split (s, pattern)</strong>
+    </dt>
+    <dd>
+    Split a string by a given pattern
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">pattern</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Pattern to split.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:concat"></a>
+    <strong>fstring:concat (s, ...)</strong>
+    </dt>
+    <dd>
+    Concat a string with multilpe strings
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">...</span>
+         var args!
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:match"></a>
+    <strong>fstring:match (s, pattern)</strong>
+    </dt>
+    <dd>
+    Match pattern in string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">pattern</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Pattern to match.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">{table</a> or <span class="type">nil}</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:rep"></a>
+    <strong>fstring:rep (s, count)</strong>
+    </dt>
+    <dd>
+    Repeat a string a number of times given
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">count</span>
+            <span class="types"><span class="type">number</span></span>
+         Count repeat times.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:trim"></a>
+    <strong>fstring:trim (s)</strong>
+    </dt>
+    <dd>
+    Trim start and end a string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:trim_start"></a>
+    <strong>fstring:trim_start (s)</strong>
+    </dt>
+    <dd>
+    Trim start a string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:trim_end"></a>
+    <strong>fstring:trim_end (s)</strong>
+    </dt>
+    <dd>
+    Trim end a string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:pad_start"></a>
+    <strong>fstring:pad_start (s, target_length, pad_string)</strong>
+    </dt>
+    <dd>
+    Pad start a string with a pad_string given until length given
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">target_length</span>
+            <span class="types"><span class="type">number</span></span>
+         Target length of new string.
+        </li>
+        <li><span class="parameter">pad_string</span>
+            <span class="types"><span class="type">number</span></span>
+         String to use to pad.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:pad_end"></a>
+    <strong>fstring:pad_end (s, target_length, pad_string)</strong>
+    </dt>
+    <dd>
+    Pad end a string with a pad_string given until length given
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">target_length</span>
+            <span class="types"><span class="type">number</span></span>
+         Target length of new string.
+        </li>
+        <li><span class="parameter">pad_string</span>
+            <span class="types"><span class="type">number</span></span>
+         String to use to pad.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:includes"></a>
+    <strong>fstring:includes (s, search_string, position)</strong>
+    </dt>
+    <dd>
+    Check if an string is included in other
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">search_string</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Search string.
+        </li>
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">number</span></span>
+         Position to start to search.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:index_of"></a>
+    <strong>fstring:index_of (s, pattern, index, plain)</strong>
+    </dt>
+    <dd>
+    Returns index of first match of pattern
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">pattern</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Pattern to match.
+        </li>
+        <li><span class="parameter">index</span>
+            <span class="types"><span class="type">number</span></span>
+         Position to start to search.
+        </li>
+        <li><span class="parameter">plain</span>
+            <span class="types"><span class="type">bool</span></span>
+         Search plain.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">{number</span> or <span class="type">nil}</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fstring:replace"></a>
+    <strong>fstring:replace (s, pattern, replace_string, substitutions)</strong>
+    </dt>
+    <dd>
+    Replace a matched pattern in a string by other
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Base string.
+        </li>
+        <li><span class="parameter">pattern</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Pattern to search.
+        </li>
+        <li><span class="parameter">replace_string</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         String with to replace.
+        </li>
+        <li><span class="parameter">substitutions</span>
+            <span class="types"><span class="type">number</span></span>
+         Max number of replaces.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-10 16:25:09 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

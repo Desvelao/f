@@ -1,0 +1,3 @@
+# ftypes
+
+Functional helpers

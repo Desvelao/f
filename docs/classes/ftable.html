@@ -1,0 +1,1103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>ftypes - functional utils</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ftypes</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/fstring.html">fstring</a></li>
+  <li><strong>ftable</strong></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/README.md.html">README</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>ftable</code></h1>
+<p>ftable module</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#ftable:for_each">ftable:for_each (t, fn)</a></td>
+	<td class="summary">Apply a function by each element in table</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:for_each_reverse">ftable:for_each_reverse (t, fn)</a></td>
+	<td class="summary">Apply a function by each element in table of reverse way</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:map">ftable:map (t, fn)</a></td>
+	<td class="summary">Create a new table whose values are result of apply a function to each element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:filter">ftable:filter (t, fn)</a></td>
+	<td class="summary">Create a new table whose values pass a function.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:find">ftable:find (t, fn)</a></td>
+	<td class="summary">Find a new table whose values pass a function.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:find_index">ftable:find_index (t, fn)</a></td>
+	<td class="summary">Find index of first element that pass the function.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:index_of">ftable:index_of (t, value)</a></td>
+	<td class="summary">Find index of first element whose value is same to given.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:reduce">ftable:reduce (t, fn, accumulator)</a></td>
+	<td class="summary">Reduce a table to a value passing a function to each element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:reduce_reverse">ftable:reduce_reverse (t, fn, accumulator)</a></td>
+	<td class="summary">Reduce a reversed table to a value passing a function to each element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:push">ftable:push (t, value)</a></td>
+	<td class="summary">Inserts a value at end of table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:pop">ftable:pop (t)</a></td>
+	<td class="summary">Removes last item of table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:unshift">ftable:unshift (t, value)</a></td>
+	<td class="summary">Inserts a value at start of table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:shift">ftable:shift (t)</a></td>
+	<td class="summary">Removes first item of table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:reverse">ftable:reverse (t)</a></td>
+	<td class="summary">Reverse a table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:flat">ftable:flat (t[, depth=1])</a></td>
+	<td class="summary">Flat a table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:flat_map">ftable:flat_map (t, fn)</a></td>
+	<td class="summary">Flat and map combined.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:slice">ftable:slice (t[, start=1[, endv=#t]])</a></td>
+	<td class="summary">Slice a table start-ends.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:sort">ftable:sort (t, fn)</a></td>
+	<td class="summary">Sort a table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:some">ftable:some (t, fn)</a></td>
+	<td class="summary">Check if some element of a table pass a function.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:every">ftable:every (t, fn)</a></td>
+	<td class="summary">Check if every element of a table pass a function.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:concat">ftable:concat (t, ot)</a></td>
+	<td class="summary">Concat a table with other.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:fill">ftable:fill (t, value, start, endv)</a></td>
+	<td class="summary">Fill a table with a element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:includes">ftable:includes (t, value)</a></td>
+	<td class="summary">Fill a table with a element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:join">ftable:join (t[, separator=""])</a></td>
+	<td class="summary">Join table elements to a string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:keys">ftable:keys (t)</a></td>
+	<td class="summary">Returns a new table with keys table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:values">ftable:values (t)</a></td>
+	<td class="summary">Returns a new table with values table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:length">ftable:length (t)</a></td>
+	<td class="summary">Returns table length.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:tostring">ftable:tostring (t[, depth=1])</a></td>
+	<td class="summary">Returns table tostring.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#ftable:print">ftable:print (t[, depth=1])</a></td>
+	<td class="summary">Print a table.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "ftable:for_each"></a>
+    <strong>ftable:for_each (t, fn)</strong>
+    </dt>
+    <dd>
+    Apply a function by each element in table
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:for_each_reverse"></a>
+    <strong>ftable:for_each_reverse (t, fn)</strong>
+    </dt>
+    <dd>
+    Apply a function by each element in table of reverse way
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:map"></a>
+    <strong>ftable:map (t, fn)</strong>
+    </dt>
+    <dd>
+    Create a new table whose values are result of apply a function to each element.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:filter"></a>
+    <strong>ftable:filter (t, fn)</strong>
+    </dt>
+    <dd>
+    Create a new table whose values pass a function.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:find"></a>
+    <strong>ftable:find (t, fn)</strong>
+    </dt>
+    <dd>
+    Find a new table whose values pass a function.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">{table</a>, <a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a>, <span class="type">number</span>, <span class="type">boolean</span> or <span class="type">nil}</span></span>
+        number
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:find_index"></a>
+    <strong>ftable:find_index (t, fn)</strong>
+    </dt>
+    <dd>
+    Find index of first element that pass the function.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">{number</span> or <span class="type">nil}</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:index_of"></a>
+    <strong>ftable:index_of (t, value)</strong>
+    </dt>
+    <dd>
+    Find index of first element whose value is same to given.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">value</span>
+         Value to find index.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">{number</span> or <span class="type">nil}</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:reduce"></a>
+    <strong>ftable:reduce (t, fn, accumulator)</strong>
+    </dt>
+    <dd>
+    Reduce a table to a value passing a function to each element.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element. Params (accumulator, element<em>value, element</em>key, table).
+        </li>
+        <li><span class="parameter">accumulator</span>
+         Init value of accumulator.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        accumulator
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:reduce_reverse"></a>
+    <strong>ftable:reduce_reverse (t, fn, accumulator)</strong>
+    </dt>
+    <dd>
+    Reduce a reversed table to a value passing a function to each element.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element. Params (accumulator, element<em>value, element</em>key, table).
+        </li>
+        <li><span class="parameter">accumulator</span>
+         Init value of accumulator.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        accumulator
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:push"></a>
+    <strong>ftable:push (t, value)</strong>
+    </dt>
+    <dd>
+    Inserts a value at end of table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">value</span>
+         Value to insert
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        length of table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:pop"></a>
+    <strong>ftable:pop (t)</strong>
+    </dt>
+    <dd>
+    Removes last item of table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        item removed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:unshift"></a>
+    <strong>ftable:unshift (t, value)</strong>
+    </dt>
+    <dd>
+    Inserts a value at start of table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">value</span>
+         Value to insert
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        length of table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:shift"></a>
+    <strong>ftable:shift (t)</strong>
+    </dt>
+    <dd>
+    Removes first item of table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        item removed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:reverse"></a>
+    <strong>ftable:reverse (t)</strong>
+    </dt>
+    <dd>
+    Reverse a table.  Create a new table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        reversed table
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:flat"></a>
+    <strong>ftable:flat (t[, depth=1])</strong>
+    </dt>
+    <dd>
+    Flat a table.  Create a new table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">depth</span>
+            <span class="types"><span class="type">number</span></span>
+         Depth to flat the table.
+         (<em>default</em> 1)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:flat_map"></a>
+    <strong>ftable:flat_map (t, fn)</strong>
+    </dt>
+    <dd>
+    Flat and map combined.  Apply a function to a flat table. Create a new table. Flat depth is 1.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to apply to each element of flatted table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:slice"></a>
+    <strong>ftable:slice (t[, start=1[, endv=#t]])</strong>
+    </dt>
+    <dd>
+    Slice a table start-ends.  Create a new table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">start</span>
+            <span class="types"><span class="type">number</span></span>
+         Start position.
+         (<em>default</em> 1)
+        </li>
+        <li><span class="parameter">endv</span>
+            <span class="types"><span class="type">number</span></span>
+         End position.
+         (<em>default</em> #t)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:sort"></a>
+    <strong>ftable:sort (t, fn)</strong>
+    </dt>
+    <dd>
+    Sort a table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Compare function. fn(a, b)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:some"></a>
+    <strong>ftable:some (t, fn)</strong>
+    </dt>
+    <dd>
+    Check if some element of a table pass a function.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to pass.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:every"></a>
+    <strong>ftable:every (t, fn)</strong>
+    </dt>
+    <dd>
+    Check if every element of a table pass a function.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">fn</span>
+            <span class="types"><span class="type">func</span></span>
+         Function to pass.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:concat"></a>
+    <strong>ftable:concat (t, ot)</strong>
+    </dt>
+    <dd>
+    Concat a table with other.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">ot</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Other table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:fill"></a>
+    <strong>ftable:fill (t, value, start, endv)</strong>
+    </dt>
+    <dd>
+    Fill a table with a element.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">value</span>
+         Fill element.
+        </li>
+        <li><span class="parameter">start</span>
+            <span class="types"><span class="type">number[opt=1]</span></span>
+         Start position.
+        </li>
+        <li><span class="parameter">endv</span>
+            <span class="types"><span class="type">number[opt=#t]</span></span>
+         End position.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:includes"></a>
+    <strong>ftable:includes (t, value)</strong>
+    </dt>
+    <dd>
+    Fill a table with a element.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">value</span>
+         Value to include.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:join"></a>
+    <strong>ftable:join (t[, separator=""])</strong>
+    </dt>
+    <dd>
+    Join table elements to a string.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">separator</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+         Separator.
+         (<em>default</em> "")
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:keys"></a>
+    <strong>ftable:keys (t)</strong>
+    </dt>
+    <dd>
+    Returns a new table with keys table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:values"></a>
+    <strong>ftable:values (t)</strong>
+    </dt>
+    <dd>
+    Returns a new table with values table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:length"></a>
+    <strong>ftable:length (t)</strong>
+    </dt>
+    <dd>
+    Returns table length.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:tostring"></a>
+    <strong>ftable:tostring (t[, depth=1])</strong>
+    </dt>
+    <dd>
+    Returns table tostring.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">depth</span>
+            <span class="types"><span class="type">number</span></span>
+         Depth.
+         (<em>default</em> 1)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.4">string</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "ftable:print"></a>
+    <strong>ftable:print (t[, depth=1])</strong>
+    </dt>
+    <dd>
+    Print a table.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">t</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Base table.
+        </li>
+        <li><span class="parameter">depth</span>
+            <span class="types"><span class="type">number</span></span>
+         Depth.
+         (<em>default</em> 1)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-10-10 16:25:09 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

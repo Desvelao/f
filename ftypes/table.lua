@@ -138,20 +138,20 @@ function M.sort(t, fn)
 end
 
 -- TODO
-function M.splice(t, start, delete, ...)
-    local length = #t
-    if (start > length) then start = length + 1
-    elseif (start < 0) then start = length + start end
+-- function M.splice(t, start, delete, ...)
+--     local length = #t
+--     if (start > length) then start = length + 1
+--     elseif (start < 0) then start = length + start end
 
-    local items = ...
-    if(#items < 1) then return t end
-    local endv = start + delete
-    local items_count = 1
-    local t_before_start = M.slice(t, 1, start)
-    for i = start, endv do
+--     local items = ...
+--     if(#items < 1) then return t end
+--     local endv = start + delete
+--     local items_count = 1
+--     local t_before_start = M.slice(t, 1, start)
+--     for i = start, endv do
 
-    end
-end
+--     end
+-- end
 
 function M.some(t, fn)
     if(M.find(t, fn)) then return true else return false end

@@ -1,0 +1,6 @@
+/luarocks
+/lua
+/lua_modules
+/.luarocks
+*.src.rock
+example.lua

@@ -1,3 +1,3 @@
 # f
 
-Functional helpers
+Functional helpers for Lua
